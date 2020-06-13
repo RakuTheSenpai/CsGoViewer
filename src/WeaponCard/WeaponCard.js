@@ -32,12 +32,14 @@ class WeaponCard extends React.Component {
         return (
             <Grid
                 container
-                item xs={2}
+                item xs={12} sm={2}
                 justify='center'
-                alignItems='center'
-                style={{ padding: 20 }}
+                style={{
+                    padding: 20,
+                    zIndex: '2'
+                }}
             >
-                <Card>
+                <Card style={{ width: '100%', height: '100%' }}>
                     <img
                         className='image-background'
                         src={'http://cdn.steamcommunity.com/economy/image/' + icon_url}
@@ -53,7 +55,7 @@ class WeaponCard extends React.Component {
                                 ')',
                             color: 'white',
                             fontSize: '100%',
-                            fontWeight: 'bold'
+                            fontWeight: 'bold',
                         }}
                     >
                         {name}
