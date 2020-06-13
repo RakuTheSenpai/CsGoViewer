@@ -1,0 +1,6 @@
+.image-background {
+    background-image: url("background.jpg");
+    background-size: cover;
+    position: relative;
+    display: block;
+  }

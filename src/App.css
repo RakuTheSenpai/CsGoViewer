@@ -1,0 +1,8 @@
+.background_gradient{
+    background: linear-gradient(#96abe6,#978661);
+    bottom: 0;
+    top:0;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
