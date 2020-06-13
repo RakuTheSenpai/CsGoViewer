@@ -1,3 +1,5 @@
-body{
-  background: linear-gradient(#96abe6,#978661) fixed;
+html, body{
+  margin: 0;
+  padding: 0;
+  height: auto;
 }

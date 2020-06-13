@@ -2,8 +2,9 @@ import React from 'react'
 import { Grid } from '@material-ui/core'
 import WeaponCard from '../WeaponCard/WeaponCard'
 
-
-function WeaponGrid() {
+function WeaponGrid(props) {
+    const inventory = props.inventory;
+    const WeaponCardComponents = inventory.map(weapon => <WeaponCard key={weapon.instanceid} weapon={weapon} />)
     return (
         <Grid
             container
@@ -11,18 +12,7 @@ function WeaponGrid() {
             justify="center"
             alignItems="center"
         >
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
-            <WeaponCard />
+            {WeaponCardComponents}
         </Grid>
     )
 }
