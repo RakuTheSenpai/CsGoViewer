@@ -4,7 +4,7 @@ import WeaponCard from '../WeaponCard/WeaponCard'
 
 function WeaponGrid(props) {
     const inventory = props.inventory;
-    const WeaponCardComponents = inventory.map(weapon => <WeaponCard key={weapon.instanceid} weapon={weapon} />)
+    const WeaponCardComponents = Object.keys(inventory).map(key => <WeaponCard key={key} weapon={inventory[key]} />)
     return (
         <Grid
             container
