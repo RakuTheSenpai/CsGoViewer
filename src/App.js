@@ -28,11 +28,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='background_gradient'>
+      <div className='background-gradient'>
         <Grid
           container
           justify='center'
           alignItems='center'
+          className="black-overlay"
         >
           <WeaponGrid inventory={this.state.weaponInventory} />
         </Grid>

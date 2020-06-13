@@ -10,7 +10,7 @@ function WeaponGrid(props) {
             container
             item xs={10}
             justify="center"
-            alignItems="center"
+            alignItems="flex-start"
         >
             {WeaponCardComponents}
         </Grid>
