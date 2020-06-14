@@ -28,7 +28,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='background-gradient'>
+      <div>
+        <div className='background-gradient'></div>
         <Grid
           container
           justify='center'
