@@ -4,6 +4,7 @@ import WeaponGrid from './WeaponGrid/WeaponGrid'
 import { Grid } from '@material-ui/core'
 import './App.css'
 import axios from 'axios'
+import Navbar from './Navbar/Navbar'
 
 class App extends React.Component {
   constructor() {
@@ -30,14 +31,8 @@ class App extends React.Component {
     return (
       <div>
         <div className='background-gradient'></div>
-        <Grid
-          container
-          justify='center'
-          alignItems='center'
-          className="black-overlay"
-        >
-          <WeaponGrid inventory={this.state.weaponInventory} />
-        </Grid>
+        <Navbar />
+        <WeaponGrid inventory={this.state.weaponInventory} />
       </div>
     )
   }
