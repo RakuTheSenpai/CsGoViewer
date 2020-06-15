@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Card, CardContent } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import './WeaponCard.css'
 
 class WeaponCard extends React.Component {
@@ -14,7 +14,7 @@ class WeaponCard extends React.Component {
                 justify='center'
                 style={{
                     padding: 20,
-                    zIndex: '2'
+                    zIndex: 2,
                 }}
             >
                 <div style={{ width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0, 0)' }}>
