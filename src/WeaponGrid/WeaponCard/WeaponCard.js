@@ -2,11 +2,14 @@ import React from 'react'
 import { Grid } from '@material-ui/core'
 import './WeaponCard.css'
 
+
+
+
 class WeaponCard extends React.Component {
     render() {
         const weapon = this.props.weapon
-        const { name, name_color, icon_url } = weapon
-
+        const { name, tags, icon_url } = weapon
+        const rarity = tags.filter(tag => tag.category == 'Rarity')[0].color
         return (
             <Grid
                 container
@@ -14,11 +17,15 @@ class WeaponCard extends React.Component {
                 justify='center'
                 style={{
                     padding: 20,
-                    zIndex: 2,
+                    zIndex: 2
                 }}
             >
-                <div style={{ width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0, 0)' }}>
-                    <div style={{ backgroundColor: '#' + name_color, width: '100%', height: '100%', overflow: 'hidden' }}>
+                <div
+                    style={{
+                        width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0, 0)'
+                    }}
+                >
+                    <div style={{ backgroundColor: '#' + rarity, width: '100%', height: '100%', overflow: 'hidden' }}>
                         <img
                             className='image-background'
                             src={'http://cdn.steamcommunity.com/economy/image/' + icon_url}
