@@ -17,7 +17,7 @@ class App extends React.Component {
     this.handleSort = this.handleSort.bind(this)
     this.handleFilter = this.handleFilter.bind(this)
   }
-  STEAM_ID = 'anomaly'
+  STEAM_ID = 'TurboMotionZ'
 
   INVENTORY_CALL = 'http://steamcommunity.com/id/' + this.STEAM_ID + '/inventory/json/730/2'
   PROXY_CORS_POLICY = 'https://cors-anywhere.herokuapp.com/'
@@ -28,8 +28,8 @@ class App extends React.Component {
         const responseInventory = results.data.rgDescriptions
         let steamInventory = []
         Object.keys(responseInventory).forEach(key => steamInventory.push(Object.assign(responseInventory[key], { id: key })))
+        steamInventory = steamInventory.sort(this.dynamicSort('name'))
         this.setState({ weaponInventory: steamInventory, filteredInventory: steamInventory })
-        console.log(steamInventory)
       }).catch(error => {
         console.log(error)
       })
@@ -47,7 +47,6 @@ class App extends React.Component {
     } else {
       this.setState({ filteredInventory: filtered })
     }
-
   }
 
   dynamicSort = property => {
@@ -113,10 +112,46 @@ class App extends React.Component {
     }
   }
 
-
-
   handleFilter = (filterParameter) => {
-    console.log(filterParameter)
+    const equipment = ['pistol', 'smg', 'machinegun', 'rifle', 'shotgun', 'knife']
+    const stickersGraffitiPatches = ['stickers', 'graffiti', 'patches']
+    const containersMore = ['case', 'key', 'storage']
+    const display = ['music', 'agent']
+    const inventory = this.state.weaponInventory
+    const check = (tags, value) => tags.some(tag => value.includes(tag))
+    let filtered
+
+    switch (filterParameter) {
+      case 'Everything':
+        this.setState({
+          filteredInventory: inventory
+        })
+        break
+      case 'Equipment':
+        filtered = inventory.filter(item => check(equipment, item.type.toLowerCase()))
+        this.setState({
+          filteredInventory: filtered
+        })
+        break
+      case 'Stickers, Graffiti & Patches':
+        filtered = inventory.filter(item => check(stickersGraffitiPatches, item.type.toLowerCase()))
+        this.setState({
+          filteredInventory: filtered
+        })
+        break
+      case 'Containers & More':
+        filtered = inventory.filter(item => check(containersMore, item.type.toLowerCase()))
+        this.setState({
+          filteredInventory: filtered
+        })
+        break
+      case 'Display':
+        filtered = inventory.filter(item => check(display, item.type.toLowerCase()))
+        this.setState({
+          filteredInventory: filtered
+        })
+        break
+    }
   }
 
   render() {

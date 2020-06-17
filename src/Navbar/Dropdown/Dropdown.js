@@ -16,17 +16,17 @@ class Dropdown extends React.Component {
     constructor() {
         super()
         this.state = {
-            titleText: ''
+            slelectedText: ''
         }
     }
     handleSelection = event => {
         const selectedValue = event.target.value
-        this.setState({ titleText: selectedValue })
+        this.setState({ slelectedText: selectedValue })
         this.props.handleSelection(selectedValue)
     }
     componentDidMount() {
-        const { title } = this.props
-        this.setState({ titleText: title })
+        const { title, menuItems } = this.props
+        this.setState({ slelectedText: title })
     }
     render() {
         const { menuItems, classes } = this.props
@@ -34,12 +34,12 @@ class Dropdown extends React.Component {
         return (
 
             <FormControl className={classes.formControl} >
-                <InputLabel id="outlined-label">{this.state.titleText}</InputLabel>
+                <InputLabel id="outlined-label">{this.props.title}</InputLabel>
                 <Select
                     labelId="outlined-label"
-                    id={'select' + this.state.titleText}
+                    id={'select' + this.props.title}
                     onChange={this.handleSelection}
-                    value={this.state.titleText}
+                    defaultValue={menuItems[0]}
                 >
                     {menuComponents}
                 </Select>

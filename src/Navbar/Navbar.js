@@ -19,7 +19,7 @@ const useStyles = theme => ({
 class Navbar extends React.Component {
     render() {
         const { classes } = this.props
-        const filterItems = ['Everything']
+        const filterItems = ['Everything', 'Equipment', 'Stickers, Graffiti & Patches', 'Containers & More', 'Display']
         const sortItems = ['A-Z', 'Z-A', 'Rarity']
         return (
             <AppBar position='static' color='transparent' style={{ height: '6vh' }}>
