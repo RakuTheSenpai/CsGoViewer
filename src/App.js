@@ -1,10 +1,10 @@
 import React from 'react'
 import logo from './logo.svg'
 import WeaponGrid from './WeaponGrid/WeaponGrid'
-import { Grid } from '@material-ui/core'
 import './App.css'
 import axios from 'axios'
 import Navbar from './Navbar/Navbar'
+import Login from './Login/Login'
 
 class App extends React.Component {
   constructor() {
@@ -12,18 +12,15 @@ class App extends React.Component {
     this.state = {
       weaponInventory: [],
       filteredInventory: [],
+      steamId: ''
     }
     this.handleSearch = this.handleSearch.bind(this)
     this.handleSort = this.handleSort.bind(this)
     this.handleFilter = this.handleFilter.bind(this)
   }
-  STEAM_ID = 'TurboMotionZ'
 
-  INVENTORY_CALL = 'http://steamcommunity.com/id/' + this.STEAM_ID + '/inventory/json/730/2'
-  PROXY_CORS_POLICY = 'https://cors-anywhere.herokuapp.com/'
-
-  getSteamInventory = (INVENTORY_CALL) => {
-    axios.get(this.PROXY_CORS_POLICY + INVENTORY_CALL)
+  getSteamInventory = (inventory_call) => {
+    axios.get(inventory_call)
       .then(results => {
         const responseInventory = results.data.rgDescriptions
         let steamInventory = []
@@ -34,10 +31,6 @@ class App extends React.Component {
         console.log(error)
       })
   };
-
-  componentDidMount() {
-    this.getSteamInventory(this.INVENTORY_CALL)
-  }
 
   handleSearch = (searchTerm) => {
     const inventory = this.state.weaponInventory
@@ -154,12 +147,23 @@ class App extends React.Component {
     }
   }
 
+  handleUser = (user) => {
+    this.setState({
+      steamId: user
+    })
+    const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
+    const INVENTORY_CALL = 'http://steamcommunity.com/id/' + user + '/inventory/json/730/2'
+    this.getSteamInventory(CORS_PROXY + INVENTORY_CALL)
+  }
+
   render() {
+    if (this.state.steamId == '') { }
     return (
       <div>
         <div className='background-gradient'></div>
-        <Navbar handleSearch={this.handleSearch} handleSort={this.handleSort} handleFilter={this.handleFilter} />
-        <WeaponGrid inventory={this.state.filteredInventory} />
+        {this.state.steamId != '' ?
+          <div><Navbar handleSearch={this.handleSearch} handleSort={this.handleSort} handleFilter={this.handleFilter} />
+            <WeaponGrid inventory={this.state.filteredInventory} /></div> : <Login handleUser={this.handleUser} />}
       </div>
     )
   }
