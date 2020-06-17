@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from './logo.svg'
 import WeaponGrid from './WeaponGrid/WeaponGrid'
 import './App.css'
 import axios from 'axios'
