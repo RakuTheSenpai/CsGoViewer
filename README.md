@@ -1,7 +1,7 @@
 # CsGoViewer
 CsGoViewer allows you to see your inventory from the Go with most of the functionality that the in-game inventory has and a similar look. The process is really simple and you can even check other inventories! 
 ## Instalation
-Unfortunately, I'm not able to host the webapp so you'll have to clone the repository and run the app with. 
+The page is live at: http://RakuTheSenpai.github.io/CsGoViewer
 ```
 npm run start
 ```
