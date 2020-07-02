@@ -2,9 +2,6 @@
 CsGoViewer allows you to see your inventory from the Go with most of the functionality that the in-game inventory has and a similar look. The process is really simple and you can even check other inventories! 
 ## Instalation
 The page is live at: http://RakuTheSenpai.github.io/CsGoViewer
-```
-npm run start
-```
 ## Enter a steamID
 You need to provide a steam id or a public steam profile in order to retrieve the inventory. 
 
