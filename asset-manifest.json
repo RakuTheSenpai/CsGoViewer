@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/csgoviwer/static/css/main.76cd0b06.chunk.css",
+    "main.js": "/csgoviwer/static/js/main.b98b821e.chunk.js",
+    "main.js.map": "/csgoviwer/static/js/main.b98b821e.chunk.js.map",
+    "runtime-main.js": "/csgoviwer/static/js/runtime-main.99717509.js",
+    "runtime-main.js.map": "/csgoviwer/static/js/runtime-main.99717509.js.map",
+    "static/js/2.1d3ab15b.chunk.js": "/csgoviwer/static/js/2.1d3ab15b.chunk.js",
+    "static/js/2.1d3ab15b.chunk.js.map": "/csgoviwer/static/js/2.1d3ab15b.chunk.js.map",
+    "index.html": "/csgoviwer/index.html",
+    "precache-manifest.47810d5619cf7f0bb8d5170c7e40c051.js": "/csgoviwer/precache-manifest.47810d5619cf7f0bb8d5170c7e40c051.js",
+    "service-worker.js": "/csgoviwer/service-worker.js",
+    "static/css/main.76cd0b06.chunk.css.map": "/csgoviwer/static/css/main.76cd0b06.chunk.css.map",
+    "static/js/2.1d3ab15b.chunk.js.LICENSE.txt": "/csgoviwer/static/js/2.1d3ab15b.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/csgoviwer/static/media/background.d44abe85.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.99717509.js",
+    "static/js/2.1d3ab15b.chunk.js",
+    "static/css/main.76cd0b06.chunk.css",
+    "static/js/main.b98b821e.chunk.js"
+  ]
+}
