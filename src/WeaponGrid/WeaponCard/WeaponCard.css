@@ -1,0 +1,6 @@
+.image-background {
+    background: linear-gradient(rgb(78, 77, 77),rgb(211, 205, 205));
+    background-size: cover;
+    position: relative;
+    display: block;
+  }

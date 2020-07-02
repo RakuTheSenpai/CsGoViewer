@@ -1,0 +1,13 @@
+.background-gradient{
+    background: url('Assets/background.jpg');
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    top:0;
+    left:0;
+    right:0;
+    z-index: -1;
+    position: fixed;
+}
